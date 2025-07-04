@@ -20,5 +20,5 @@ EXPOSE 80
 
 # serve the app / run the app (keep it running)
 
-CMD ["python","run.py"]
+# CMD ["python","run.py"]
 
