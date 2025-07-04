@@ -18,7 +18,18 @@ pipeline{
     }
     stage('Push to Docker'){
       steps{
-         sh "docker push maneeshaagni/pandulurepo/flash-app:v1"
+         withCredentials([usernamePassword(
+           credentialsId: 'dockerhub-token', 
+           passwordVariable: 'DOCKERHUB_CREDENTIALS_PSW', 
+           usernameVariable: 'DOCKERHUB_CREDENTIALS_USR'
+           
+         )])
+
+        
+         sh "docker login -u "DOCKERHUB_CREDENTIALS_USR" -p "DOCKERHUB_CREDENTIALS_PSW""
+         sh "docker image tag one-tier-flask-app:v1 "DOCKERHUB_CREDENTIALS_USR"/one-tier-flask-app:v1"
+         sh "docker push "DOCKERHUB_CREDENTIALS_USR"/one-tier-flask-app:v1"
+        
       }
     }
     stage('done'){
