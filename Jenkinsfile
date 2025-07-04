@@ -11,7 +11,7 @@ pipeline{
       sh "docker run -d --build Flask-app:v1"
     }
     stage('Push to Docker'){
-      sh "docker push maneeshaagni/Flash-app:v1"
+      sh "docker push maneeshaagni/pandulurepo/Flash-app:v1"
     }
     stage('done'){
       echo "Pipeline Successfull !!"
