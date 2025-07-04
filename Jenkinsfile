@@ -13,7 +13,7 @@ pipeline{
     }
     stage('Deploy'){
       steps{
-          sh "docker run -d -p 8080:8080 --name flask-app nginx:latest"
+          sh "docker run -d -p 5000:5000 --name flask-app nginx:latest"
       }
     }
     stage('Push to Docker'){
