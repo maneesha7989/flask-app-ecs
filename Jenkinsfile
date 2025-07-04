@@ -27,8 +27,8 @@ pipeline{
 
         
          sh "docker login -u ${env.DOCKERHUB_CREDENTIALS_USR} -p ${env.DOCKERHUB_CREDENTIALS_PSW}"
-         sh "docker image tag flask-app:v1 ${env.DOCKERHUB_CREDENTIALS_USR}/pandulurepo/one-tier-flask-app:v1"
-         sh "docker push ${env.DOCKERHUB_CREDENTIALS_USR}/pandulurepo/one-tier-flask-app:v1"
+         sh "docker image tag flask-app:v1 ${env.DOCKERHUB_CREDENTIALS_USR}/one-tier-flask-app:v2"
+         sh "docker push ${env.DOCKERHUB_CREDENTIALS_USR}/one-tier-flask-app:v2"
          }
       }
     }
