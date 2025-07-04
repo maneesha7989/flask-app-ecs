@@ -6,7 +6,7 @@ pipeline{
           git url: "https://github.com/maneesha7989/flask-app-ecs.git", branch: "main"
       }
     }
-    /* stage('Build Image'){
+    stage('Build Image'){
        steps{
           sh "docker build -t Flask-app:v1 ."
       }
@@ -25,6 +25,6 @@ pipeline{
       steps{
           echo "Pipeline Successfull !!"
       }
-    } */
+    }
   }
 }
