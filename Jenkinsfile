@@ -8,17 +8,17 @@ pipeline{
     }
     stage('Build Image'){
        steps{
-          sh "docker build -t Flask-app:v1 ."
+          sh "docker build -t flask-app:v1 ."
       }
     }
     stage('Deploy'){
       steps{
-          sh "docker run -d --build Flask-app:v1"
+          sh "docker run -d --build flask-app:v1"
       }
     }
     stage('Push to Docker'){
       steps{
-         sh "docker push maneeshaagni/pandulurepo/Flash-app:v1"
+         sh "docker push maneeshaagni/pandulurepo/flash-app:v1"
       }
     }
     stage('done'){
